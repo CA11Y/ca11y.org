@@ -7,10 +7,13 @@
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^0.9.0",
+    "dayjs": "^1.8.17",
+    "flat-cache": "^2.0.1",
+    "node-fetch": "^2.6.0",
     "prettier": "^1.19.1"
   },
   "scripts": {
     "build": "eleventy",
-    "dev": "eleventy --serve"
+    "dev": "DEBUG=Eleventy* eleventy --serve"
   }
 }

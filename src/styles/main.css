@@ -1,0 +1,168 @@
+:root {
+  --color__navy: #14233b;
+  --color__off-white: #fdfbf8;
+  --color__brown: #a8723d;
+  --color__text: #454545;
+}
+
+html {
+  font-family: sans-serif;
+  line-height: 1.7;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color__off-white);
+  color: var(--color__text);
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: calc(18 / 16 * 1em);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #fdfbf8;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: var(--color__navy);
+  text-underline-position: under;
+}
+
+header {
+  text-align: center;
+}
+
+header p {
+  letter-spacing: 1px;
+  font-weight: bold;
+  color: var(--color__navy);
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+h1 img {
+  flex-shrink: 0;
+  max-width: none;
+  min-width: 100vw;
+}
+
+main {
+  max-width: 44em;
+  margin: 0 auto 120px;
+  padding: 0 12px;
+}
+
+main > section {
+  margin-top: 60px;
+}
+
+#Events > section > h4 {
+  margin-bottom: 0;
+}
+
+.Event {
+  margin-bottom: 40px;
+}
+
+.Event__coverImage {
+  border: 1px solid var(--color__navy);
+}
+
+.Event__coverImage + p {
+  margin-top: 0;
+}
+
+.LatestEvent {
+  position: relative;
+  display: inline-block;
+  padding: 1em;
+  background-color: var(--color__navy);
+  color: white;
+  border-top: 3px dashed #a8723d;
+}
+
+.LatestEvent__title {
+  margin: 0;
+}
+
+.LatestEvent__link {
+  color: inherit;
+}
+
+.LatestEvent__link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.LatestEvent__info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  margin-bottom: 0;
+  font-size: calc(14 / 16 * 1em);
+}
+
+.LatestEvent__infoLabel::after {
+  content: ":";
+  margin: 0 4px;
+}
+
+.LatestEvent__infoValue {
+  margin-left: 0;
+}
+
+.MemberList {
+  list-style: none;
+  padding-left: 0;
+}
+
+.MemberList > li {
+  padding: 8px 0;
+}
+
+.MemberList > li > a {
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.MemberList > li > a > img {
+  margin-right: 4px;
+  border-radius: 50%;
+}
+
+.Cis {
+  background-color: var(--color__navy);
+  padding: 0.75em 4px 4px;
+  color: var(--color__off-white);
+  font-style: normal;
+  font-weight: bold;
+  letter-spacing: 1px;
+  -webkit-text-emphasis: filled sesame var(--color__brown);
+  text-emphasis: filled sesame var(--color__brown);
+}
+
+body > footer {
+  padding: 60px 8px 8px;
+  background-color: var(--color__navy);
+  color: white;
+  text-align: center;
+}
