@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CA11Y - Local Accessibility Community at 渋谷</title>
+    <meta name="description" content="渋谷を中心にしたアクセシビリティの勉強会コミュニティです。CA11YのCは渋谷のCです。"/>
+    <link rel="stylesheet" href="./styles/main.css"/>
+  </head>
+
+  <body>
+    <header>
+      <h1><img src="./images/noren.svg" alt="CA11Y"/></h1>
+      <p>Hi! We are CA11Y!</p>
+    </header>
+    <main>
+      <p>CA11Yは渋谷を中心に行われるアクセシビリティの勉強会グループです。主にウェブやアプリ、電子書籍などの情報アクセシビリティ向上に取り組む人が気軽に立ち寄れる、集まれる場所を目指しています。</p>
+      <p>
+        <em class="Cis">CA11YのCは渋谷のCです</em>
+      </p>
+      <p>Twitter: <a href="https://twitter.com/ca11y_">@CA11Y_</a>
+      </p>
+      {% if latestEvent %}
+        <section id="LatestEvent">
+          <h3>最新イベント</h3>
+          <article class="LatestEvent">
+            <h4 class="LatestEvent__title">
+              <a class="LatestEvent__link" href="{{ latestEvent.event_url }}">{{ latestEvent.title }}</a>
+            </h4>
+            <dl class="LatestEvent__info">
+              <dt class="LatestEvent__infoLabel">日時</dt>
+              <dd class="LatestEvent__infoValue">{{ latestEvent.started_at | dateFormat }} ~</dd>
+              <dt class="LatestEvent__infoLabel">場所</dt>
+              <dd class="LatestEvent__infoValue">{{ latestEvent.place }}<br/>{{ latestEvent.address }}
+                <dd></dl>
+              </article>
+              <p>
+                <a href="https://ca11y.connpass.com/event/">CA11Y - イベント一覧 - connpass</a>
+              </p>
+            </section>
+          {% endif %}
+          <section id="Events">
+            <h3>開催イベント</h3>
+            <section class="Event" id="CA11Y">
+              <h4 class="Event__title">CA11Y</h4>
+              <img class="Event__coverImage" src="./images/CA11Y_events_logo.png" alt="CA11Yのカバー画像。暖簾のイラストに白のロゴ"/>
+              <p>登壇者がいて、LT枠があって、という形式の勉強会です。誰かの知見を聞いたり、共有したい！を叶えます。</p>
+              <p>ハッシュタグ <a href="https://twitter.com/hashtag/ca11y">#ca11y</a>
+              </p>
+            </section>
+            <section class="Event" id="A11y_moku2">
+              <h4 class="Event__title">アクセシビリティもくもく会</h4>
+              <img class="Event__coverImage" src="./images/a11y_moku2_events_logo.png" alt="オンラインアクセシビリティもくもく会のカバー画像。A11Yの11の由来が説明されている。"/>
+              <p>WCAGなどのアクセシビリティ関連文書や仕様をみんなでもくもくと読んだり、アクセシビリティに関する作業をもくもくとする会です。</p>
+              <p>わからないことがあれば、ハッシュタグで聞いたり、同じテーブルの人に聞いたりします。みんなでやれば怖くないの精神です。</p>
+              <p>A11YJ.slack.comの #a11y_moku2 部屋でオンラインチャット的にやることもあります。</p>
+              <p>ハッシュタグ <a href="https://twitter.com/hashtag/a11y_moku2">#a11y_moku2</a>
+              </p>
+            </section>
+            <section class="Event" id="A11y_lunch">
+              <h4 class="Event__title">アクセシビリティランチ</h4>
+              <img class="Event__coverImage" src="./images/a11y_lunch_events_logo.png" alt="アクセシビリティランチのカバー画像。オムライスの上に#a11y_lunchと書かれた旗が差してある。"/>
+              <p>アクセシビリティのことを話しながらランチするランチミートアップです。だいたい第4木曜日にやってます</p>
+              <p>ハッシュタグ <a href="https://twitter.com/hashtag/a11y_lunch">#a11y_lunch</a>
+              </p>
+            </section>
+          </section>
+          <section id="Member">
+            <h3>運営メンバー</h3>
+            <ul class="MemberList">
+              <li>
+                <a href="https://twitter.com/talocohc_rion">
+                  <img width="44" height="44" src="images/talocohc_rion_profile.jpg" alt=""/>@talocohc_rion</a>
+              </li>
+              <li>
+                <a href="https://twitter.com/ku03201975">
+                  <img width="44" height="44" src="images/ku03201975_prifile.jpg" alt=""/>@ku03201975</a>
+              </li>
+              <li>
+                <a href="https://twitter.com/8845musign">
+                  <img width="44" height="44" src="images/8845musign_profile.png" alt=""/>@8845musign</a>
+              </li>
+              <li>
+                <a href="https://twitter.com/earlgrayMK">
+                  <img width="44" height="44" src="images/earlgrayMK_profile.jpg" alt=""/>@earlgrayMK</a>
+              </li>
+              <li>
+                <a href="https://twitter.com/masuP9">
+                  <img width="44" height="44" src="images/masuP9_profile.jpg" alt=""/>@masuP9</a>
+              </li>
+            </ul>
+            <p>勉強会の企画や実施などお手伝いいただける方を募集しています。興味がある方はメンバーか<a href="https://twitter.com/CA11Y_">CA11YのTwitterアカウント</a>にコンタクトしてください！</p>
+          </section>
+        </main>
+        <footer>
+          <p>
+            <em class="Cis">CA11YのCは渋谷のCだって</em>
+          </p>
+        </footer>
+      </body>
+    </html>
