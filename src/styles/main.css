@@ -69,8 +69,8 @@ main > section {
   margin-top: 60px;
 }
 
-#Events > section > h4 {
-  margin-bottom: 0;
+.Event__title {
+  margin-bottom: 4px;
 }
 
 .Event {
