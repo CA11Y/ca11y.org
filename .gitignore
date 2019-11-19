@@ -1,3 +1,4 @@
 node_modules
 _site
 _datacache
+yarn-error.log
