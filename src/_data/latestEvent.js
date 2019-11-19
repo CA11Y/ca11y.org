@@ -25,7 +25,7 @@ async function fetchLatestEvent() {
 
 module.exports = async function() {
   let cache = flatcache.load("latest-event", path.resolve("./_datacache"));
-  console.log(cache);
+
   let key = getCacheKey();
   let cachedData = cache.getKey(key);
 
