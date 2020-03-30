@@ -4,8 +4,9 @@ const path = require("path");
 
 function getCacheKey() {
   let date = new Date();
-  return `${date.getUTCFullYear()}-${date.getUTCMonth() +
-    1}-${date.getUTCDate()}`;
+  return `${date.getUTCFullYear()}-${
+    date.getUTCMonth() + 1
+  }-${date.getUTCDate()}`;
 }
 
 async function fetchLatestEvent() {
@@ -23,7 +24,7 @@ async function fetchLatestEvent() {
   }
 }
 
-module.exports = async function() {
+module.exports = async function () {
   let cache = flatcache.load("latest-event", path.resolve("./_datacache"));
 
   let key = getCacheKey();
