@@ -1,5 +1,4 @@
-const fetch = require("node-fetch");
-const flatcache = require("flat-cache");
+const { create } = require("flat-cache");
 const path = require("path");
 
 function getCacheKey() {
@@ -14,7 +13,7 @@ async function fetchLatestEvent() {
 
   try {
     const response = await fetch(
-      "https://connpass.com/api/v1/event/?series_id=4097&order=3&count=1"
+      "https://connpass.com/api/v1/event/?series_id=4097&order=3&count=1",
     );
     const data = await response.json();
 
@@ -25,16 +24,19 @@ async function fetchLatestEvent() {
 }
 
 module.exports = async function () {
-  let cache = flatcache.load("latest-event", path.resolve("./_datacache"));
+  let cache = create({
+    cacheId: "latest-event",
+    cacheDir: path.resolve("./_datacache"),
+  });
 
   let key = getCacheKey();
-  let cachedData = cache.getKey(key);
+  let cachedData = cache.get(key);
 
   if (!cachedData) {
     const newData = await fetchLatestEvent();
 
     if (newData.title != null) {
-      cache.setKey(key, newData);
+      cache.set(key, newData);
       cache.save();
       return newData;
     }
