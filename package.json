@@ -5,6 +5,7 @@
   "repository": "git@github.com:CA11Y/ca11y.org.git",
   "author": "masuP9 <masuP9@gmail.com>",
   "license": "MIT",
+  "packageManager": "pnpm@10.28.1",
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
     "dayjs": "^1.11.0",
